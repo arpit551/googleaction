@@ -14,7 +14,7 @@ const app = actionssdk({debug: true});
 
 app.intent('actions.intent.MAIN', (conv) => {
   conv.ask('<speak>Hi! <break time="1"/> ' +
-    ' Say your name and your crush name!! lets find out the heat between you two!.</speak>');
+    ' Say your name and your\'s crush name!! Lets find out the heat between you two!.</speak>');
 });
 
 app.intent('actions.intent.TEXT', (conv, input) => {
@@ -72,21 +72,30 @@ if(ans<50)
 ans=ans*2;
 if(ans<20)
 ans=ans*2;
+if(ans>42&&ans<47)
+ans=ans+40;
+if(p[1]==='arpit'||p[0]==='arpit')
+ans=100;
 if(ans<20)
   return  conv.ask('<speak>Well your score is ' +
-    ans +' percentage . Well you sure its her because it looks like something is missing between you two!!</speak>');
+    ans +' percent . Well you sure its her because it looks like something is missing between you two!!</speak>');
 if(ans<40)
   return  conv.ask('<speak>Your score is ' +
-    ans +' percentage. Ohk percentage seems to be low but I know you will prove us wrong!! GOOD LUCK! </speak>');
+    ans +' percent. Ohk percentage seems to be low but I know you will prove us wrong!! GOOD LUCK! </speak>');
 if(ans<60)
   return  conv.ask('<speak>Well the score is ' +
-    ans +' percentage. I think it is perfect from your side but not looks great from other end!</speak>');
-if(ans<80)
+    ans +' percent. I think it is perfect from your side but not looks great from other end!.</speak>');
+if(ans<70)
+      return  conv.ask('<speak>Your score is ' +
+        ans +' percent. Try your nick names your score might increase!! </speak>');
+if(ans<88)
   return  conv.ask('<speak>' +
-    ans +' percentage!!. Its awesome, start naming your kids! </speak>');
+    ans +' percent!!. Its awesome, start naming your kids! </speak>');
 if(ans<100)
   return  conv.ask('<speak>Woah! its  ' +
-    ans +' percentage. I think it would not be wrong to say that '+ p[0] +' and ' +p[1]+ ' are perfect for each other. Just get a room!! </speak>');
+    ans +' percent. I think it would not be wrong to say that '+ p[0] +' and ' +p[1]+ ' are perfect for each other. Just get a room!! </speak>');
+if(ans===100)
+      return  conv.ask('<speak>Its 100 percent. Either you both are made for each other or you have crush on developer!!</speak>');
 });
 
 exports.myfunction = functions.https.onRequest(app);
