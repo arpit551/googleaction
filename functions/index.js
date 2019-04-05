@@ -13,16 +13,16 @@ const {actionssdk} = require('actions-on-google');
 const app = actionssdk({debug: true});
 
 app.intent('actions.intent.MAIN', (conv) => {
-  conv.ask('<speak>Hi! <break time="1"/> ' +
-    ' Say your name and your\'s crush name!! Lets find out the heat between you two!.</speak>');
+  conv.ask('<speak>Hi.<break time="1"/> ' +
+    ' Say your and your\'s crush first name!. Lets find out the heat between you two!.</speak>');
 });
 
 app.intent('actions.intent.TEXT', (conv, input) => {
 var L=7,O=1,V=9,E=3,com=1;
 var rawInput = input.toLowerCase() ;
 var p = rawInput.toString().split(' and ');
-  if (input ==='bye') {
-    return conv.close('Goodbye!');
+  if (rawInput ==='bye') {
+    return conv.close('Goodbye! Just ask your crush out we will increase your score!!');
   }
   if(typeof(p[1])==="undefined")
   {
@@ -30,14 +30,14 @@ var p = rawInput.toString().split(' and ');
   }
   if(typeof(p[1])==="undefined")
   {
-    return conv.ask('<speak>Enter two names, although we know that you are best for yourself!!! </speak>');
+    return conv.ask('<speak>Enter two names, although we know that you are best for yourself!!.</speak>');
   }
     if (input ==='bye') {
       return conv.close('Goodbye!');
     }
     if(typeof(p[3])!=="undefined")
     {
-      conv.ask('<speak>Unusual names! I must say.</speak>');
+      conv.ask('<speak>Unusual names. I must say.</speak>');
     }
   for(var j=0;j<p[0].length;j++)
   {
@@ -78,24 +78,24 @@ if(p[1]==='arpit'||p[0]==='arpit')
 ans=100;
 if(ans<20)
   return  conv.ask('<speak>Well your score is ' +
-    ans +' percent . Well you sure its her because it looks like something is missing between you two!!</speak>');
+    ans +' percent . Well you sure its her because it looks like something is missing between you two!!. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 if(ans<40)
   return  conv.ask('<speak>Your score is ' +
-    ans +' percent. Ohk percentage seems to be low but I know you will prove us wrong!! GOOD LUCK! </speak>');
+    ans +' percent. Okay percentage seems to be low but I know you will prove us wrong! GOOD LUCK. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 if(ans<60)
   return  conv.ask('<speak>Well the score is ' +
-    ans +' percent. I think it is perfect from your side but not looks great from other end!.</speak>');
+    ans +' percent. I think it is perfect from your side but not looks great from other end!. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 if(ans<70)
       return  conv.ask('<speak>Your score is ' +
-        ans +' percent. Try your nick names your score might increase!! </speak>');
+        ans +' percent. Don\'t worry try your nick names your score might increase!. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 if(ans<88)
   return  conv.ask('<speak>' +
-    ans +' percent!!. Its awesome, start naming your kids! </speak>');
+    ans +' percent!!. Its awesome, start naming your kids. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 if(ans<100)
-  return  conv.ask('<speak>Woah! its  ' +
-    ans +' percent. I think it would not be wrong to say that '+ p[0] +' and ' +p[1]+ ' are perfect for each other. Just get a room!! </speak>');
+  return  conv.ask('<speak>Woah its ' +
+    ans +' percent. I think it would not be wrong to say that '+ p[0] +' and ' +p[1]+ ' are perfect for each other. Just get a room!. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that. </speak>');
 if(ans===100)
-      return  conv.ask('<speak>Its 100 percent. Either you both are made for each other or you have crush on developer!!</speak>');
+      return  conv.ask('<speak>Its 100 percent. Either you both are made for each other or you have crush on developer!!. You can try another names, we won\'t tell anyone! But if you want to quit its your choice, just say bye for that.</speak>');
 });
 
 exports.myfunction = functions.https.onRequest(app);

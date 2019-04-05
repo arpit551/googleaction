@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "Love Checker"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "talk to Love Checker"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "funny name": {
+      "name": "Love Checker",
+      "url": "https://us-central1-spheric-crow-225707.cloudfunctions.net/myfunction"
+    }
+  },
+  "locale": "en"
+}

@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "description": "लव चेकर",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "Love Checker"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "लव चेकर से बात करें"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "Love Checker": {
+      "name": "Love Checker",
+      "url": "https://us-central1-spheric-crow-225707.cloudfunctions.net/myfunctionhindi"
+    }
+  },
+  "locale": "hi"
+}

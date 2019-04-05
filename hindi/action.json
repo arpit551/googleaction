@@ -1,0 +1,49 @@
+{
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "लव चेकर"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "लव चेकर से बात करें"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "funny name": {
+      "name": "लव चेकर",
+      "url": "https://us-central1-spheric-crow-225707.cloudfunctions.net/myfunctionhindi"
+    }
+  },
+  "locale": "hi",
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "लव चेकर"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "लव चेकर से बात करें"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "funny name": {
+      "name": "लव चेकर",
+      "url": "https://us-central1-spheric-crow-225707.cloudfunctions.net/myfunctionhindi"
+    }
+  },
+}
